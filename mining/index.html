@@ -5,7 +5,7 @@
 <script>
 $(document).ready(function(){
     $("button").click(function(){
-        $.getJSON("http://167.99.70.200:81", function(result){
+        $.getJSON("http://167.99.70.200:81/workers.json", function(result){
             $.each(result, function(i, field){
                 $("div").append(field + " ");
             });
