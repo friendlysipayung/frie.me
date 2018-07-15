@@ -47,7 +47,8 @@
         //alert('Your Json result is:  ' + data.result); //you can comment this, i used it to debug
         msg =  "========================================================"+ "\n";
         msg += "Port 1111"+"\n";
-        msg += "Uptime = " + data.uptime + "\n";
+        var a = data.uptime/60;
+        msg += "Uptime = " + a + " menit" + "\n";
         msg += "Hash Rate" + "\n";
         msg += "\t" + " 1 menit  = " + data.hashrate.total[0] + "\n";
         msg += "\t" + "10 menit  = " + data.hashrate.total[1] + "\n";
