@@ -3,6 +3,9 @@
   <div id="result">
   
   </div>
+  <div id="result2">
+  
+  </div>
   <script>
     
 //     var root = 'http://178.128.50.174:81/';
@@ -63,24 +66,24 @@
  
     getJSON('http://178.128.50.174:82/').then(function(data) {
         //alert('Your Json result is:  ' + data.result); //you can comment this, i used it to debug
-        msg =  "========================================================"+ "\n";
-        msg += "Port 3333"+"\n";
-        msg += "Uptime = " + data.uptime + "\n";
-        msg += "Hash Rate" + "\n";
-        msg += "\t" + " 1 menit  = " + data.hashrate.total[0] + "\n";
-        msg += "\t" + "10 menit  = " + data.hashrate.total[1] + "\n";
-        msg += "\t" + " 1 jam    = " + data.hashrate.total[2] + "\n";
-        msg += "\t" + "12 jam    = " + data.hashrate.total[3] + "\n";
-        msg += "\t" + "24 jam    = " + data.hashrate.total[4] + "\n";
-        msg += "\t" + "Rata-rata = " + data.hashrate.total[5] + "\n";
-        msg += "-------------------------------------------------------"+ "\n";
-        msg += "Miners " + "\n";
-        msg += "\t" + "Now  = " + data.miners.now + "\n";
-        msg += "\t" + "Now  = " + data.miners.max + "\n";
-        msg += "-------------------------------------------------------"+ "\n";
-        msg += "Status = " + data.results.accepted +" / " + data.results.rejected +" / " + data.results.invalid +" / " + data.results.expired +" " + "\n";
+        msg2 =  "========================================================"+ "\n";
+        msg2 += "Port 3333"+"\n";
+        msg2 += "Uptime = " + data.uptime + "\n";
+        msg2 += "Hash Rate" + "\n";
+        msg2 += "\t" + " 1 menit  = " + data.hashrate.total[0] + "\n";
+        msg2 += "\t" + "10 menit  = " + data.hashrate.total[1] + "\n";
+        msg2 += "\t" + " 1 jam    = " + data.hashrate.total[2] + "\n";
+        msg2 += "\t" + "12 jam    = " + data.hashrate.total[3] + "\n";
+        msg2 += "\t" + "24 jam    = " + data.hashrate.total[4] + "\n";
+        msg2 += "\t" + "Rata-rata = " + data.hashrate.total[5] + "\n";
+        msg2 += "-------------------------------------------------------"+ "\n";
+        msg2 += "Miners " + "\n";
+        msg2 += "\t" + "Now  = " + data.miners.now + "\n";
+        msg2 += "\t" + "Now  = " + data.miners.max + "\n";
+        msg2 += "-------------------------------------------------------"+ "\n";
+        msg2 += "Status = " + data.results.accepted +" / " + data.results.rejected +" / " + data.results.invalid +" / " + data.results.expired +" " + "\n";
       
-        result.innerText = msg; //display the result in an HTML element
+        result2.innerText = msg2; //display the result in an HTML element
     }, function(status) { //error detection....
       alert('Something went wrong.');
     });
