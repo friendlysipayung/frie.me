@@ -41,7 +41,7 @@
         //alert('Your Json result is:  ' + data.result); //you can comment this, i used it to debug
         msg = "Port 1111"+"\n";
         msg += "Id = " + data.id + "\n";
-        result.innerHTML = msg; //display the result in an HTML element
+        result.innerText = msg; //display the result in an HTML element
     }, function(status) { //error detection....
       alert('Something went wrong.');
     });
