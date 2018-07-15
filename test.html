@@ -39,16 +39,46 @@
 
     getJSON('http://178.128.50.174:81/').then(function(data) {
         //alert('Your Json result is:  ' + data.result); //you can comment this, i used it to debug
-        msg = "Port 1111" & "<br />";
-        msg += "Uptime = " & data.uptime & "<br />";
-        msg += "Hash Rate = " & "<br />";
-        msg += "\t" & " 1 menit  = " & data.hashrate.total[0] & "<br />";
-        msg += "\t" & "10 menit  = " & data.hashrate.total[1] & "<br />";
-        msg += "\t" & " 1 jam    = " & data.hashrate.total[2] & "<br />";
-        msg += "\t" & "12 jam    = " & data.hashrate.total[3] & "<br />";
-        msg += "\t" & "24 jam    = " & data.hashrate.total[4] & "<br />";
-        msg += "\t" & "Rata-rata = " & data.hashrate.total[5] & "<br />";
-        msg += "Id = " & data.id & "<br />";
+        msg =  "========================================================"+ "\n";
+        msg += "Port 1111"+"\n";
+        msg += "Uptime = " + data.uptime + "\n";
+        msg += "Hash Rate" + "\n";
+        msg += "\t" + " 1 menit  = " + data.hashrate.total[0] + "\n";
+        msg += "\t" + "10 menit  = " + data.hashrate.total[1] + "\n";
+        msg += "\t" + " 1 jam    = " + data.hashrate.total[2] + "\n";
+        msg += "\t" + "12 jam    = " + data.hashrate.total[3] + "\n";
+        msg += "\t" + "24 jam    = " + data.hashrate.total[4] + "\n";
+        msg += "\t" + "Rata-rata = " + data.hashrate.total[5] + "\n";
+        msg += "-------------------------------------------------------"+ "\n";
+        msg += "Miners " + "\n";
+        msg += "\t" + "Now  = " + data.miners.now + "\n";
+        msg += "\t" + "Now  = " + data.miners.max + "\n";
+        msg += "-------------------------------------------------------"+ "\n";
+        msg += "Status = " + data.results.accepted +" / " + data.results.rejected +" / " + data.results.invalid +" / " + data.results.expired +" " + "\n";
+      
+        result.innerHTML = msg; //display the result in an HTML element
+    }, function(status) { //error detection....
+      alert('Something went wrong.');
+    });
+ 
+    getJSON('http://178.128.50.174:82/').then(function(data) {
+        //alert('Your Json result is:  ' + data.result); //you can comment this, i used it to debug
+        msg =  "========================================================"+ "\n";
+        msg += "Port 3333"+"\n";
+        msg += "Uptime = " + data.uptime + "\n";
+        msg += "Hash Rate" + "\n";
+        msg += "\t" + " 1 menit  = " + data.hashrate.total[0] + "\n";
+        msg += "\t" + "10 menit  = " + data.hashrate.total[1] + "\n";
+        msg += "\t" + " 1 jam    = " + data.hashrate.total[2] + "\n";
+        msg += "\t" + "12 jam    = " + data.hashrate.total[3] + "\n";
+        msg += "\t" + "24 jam    = " + data.hashrate.total[4] + "\n";
+        msg += "\t" + "Rata-rata = " + data.hashrate.total[5] + "\n";
+        msg += "-------------------------------------------------------"+ "\n";
+        msg += "Miners " + "\n";
+        msg += "\t" + "Now  = " + data.miners.now + "\n";
+        msg += "\t" + "Now  = " + data.miners.max + "\n";
+        msg += "-------------------------------------------------------"+ "\n";
+        msg += "Status = " + data.results.accepted +" / " + data.results.rejected +" / " + data.results.invalid +" / " + data.results.expired +" " + "\n";
       
         result.innerHTML = msg; //display the result in an HTML element
     }, function(status) { //error detection....
