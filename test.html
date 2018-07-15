@@ -47,8 +47,8 @@
         //alert('Your Json result is:  ' + data.result); //you can comment this, i used it to debug
         msg =  "========================================================"+ "\n";
         msg += "Port 1111"+"\n";
-        var a = data.uptime/60;
-        msg += "Uptime = " + a + " menit" + "\n";
+        var a = data.uptime/60/60;
+        msg += "Uptime = " + a + " jam" + "\n";
         msg += "Hash Rate" + "\n";
         msg += "\t" + " 1 menit  = " + data.hashrate.total[0] + "\n";
         msg += "\t" + "10 menit  = " + data.hashrate.total[1] + "\n";
@@ -74,7 +74,8 @@
         //alert('Your Json result is:  ' + data.result); //you can comment this, i used it to debug
         msg2 =  "========================================================"+ "\n";
         msg2 += "Port 3333"+"\n";
-        msg2 += "Uptime = " + data.uptime + "\n";
+        var a = data.uptime/60/60;
+        msg += "Uptime = " + a + " jam" + "\n";
         msg2 += "Hash Rate" + "\n";
         msg2 += "\t" + " 1 menit  = " + data.hashrate.total[0] + "\n";
         msg2 += "\t" + "10 menit  = " + data.hashrate.total[1] + "\n";
@@ -101,7 +102,8 @@
         //alert('Your Json result is:  ' + data.result); //you can comment this, i used it to debug
         msg3 =  "========================================================"+ "\n";
         msg3 += "Port 5555"+"\n";
-        msg3 += "Uptime = " + data.uptime + "\n";
+        var a = data.uptime/60/60;
+        msg += "Uptime = " + a + " jam" + "\n";
         msg3 += "Hash Rate" + "\n";
         msg3 += "\t" + " 1 menit  = " + data.hashrate.total[0] + "\n";
         msg3 += "\t" + "10 menit  = " + data.hashrate.total[1] + "\n";
