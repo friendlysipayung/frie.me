@@ -37,10 +37,10 @@
       });
     };
 
-    getJSON('http://178.128.50.174:81/').then(function(data) {
-        alert('Your Json result is:  ' + data.result); //you can comment this, i used it to debug
+    getJSON('http://178.128.50.174:81/').then(function(response) {
+        alert('Your Json result is:  ' + response.result); //you can comment this, i used it to debug
 
-        result.innerText = data.result; //display the result in an HTML element
+        result.innerText = response.result; //display the result in an HTML element
     }, function(status) { //error detection....
       alert('Something went wrong.');
     });
