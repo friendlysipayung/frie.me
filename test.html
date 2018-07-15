@@ -1,11 +1,15 @@
 <html>
-<body>
+<body style="background-color:powderblue;margin-left: 10px;>
+  <p style="font-family:courier;font-size:90%;">
+  <div id="total">
+  </div>
   <div id="result">
-  
   </div>
   <div id="result2">
-  
   </div>
+  <div id="result3">
+  </div>
+                  
   <script>
     
 //     var root = 'http://178.128.50.174:81/';
@@ -22,7 +26,8 @@
 //     script.src = 'http://178.128.50.174:81/?callback=insertReply';
 //     // insert script to document and load content
 //     document.body.appendChild(script);
-    
+    var totalhs = 0;
+    var totalminer = 0;
     var getJSON = function(url) {
       return new Promise(function(resolve, reject) {
         var xhr = new XMLHttpRequest();
@@ -58,7 +63,9 @@
         msg += "\t" + "Now  = " + data.miners.max + "\n";
         msg += "-------------------------------------------------------"+ "\n";
         msg += "Status = " + data.results.accepted +" / " + data.results.rejected +" / " + data.results.invalid +" / " + data.results.expired +" " + "\n";
-      
+        totalhs += data.hashrate.total[5];
+        totalminer += data.miners.now
+         
         result.innerText = msg; //display the result in an HTML element
     }, function(status) { //error detection....
       alert('Something went wrong.');
@@ -82,12 +89,46 @@
         msg2 += "\t" + "Now  = " + data.miners.max + "\n";
         msg2 += "-------------------------------------------------------"+ "\n";
         msg2 += "Status = " + data.results.accepted +" / " + data.results.rejected +" / " + data.results.invalid +" / " + data.results.expired +" " + "\n";
-      
+        totalhs += data.hashrate.total[5];
+        totalminer += data.miners.now
+        
+        
         result2.innerText = msg2; //display the result in an HTML element
     }, function(status) { //error detection....
       alert('Something went wrong.');
     });
     
+    getJSON('http://178.128.50.174:83/').then(function(data) {
+        //alert('Your Json result is:  ' + data.result); //you can comment this, i used it to debug
+        msg3 =  "========================================================"+ "\n";
+        msg3 += "Port 5555"+"\n";
+        msg3 += "Uptime = " + data.uptime + "\n";
+        msg3 += "Hash Rate" + "\n";
+        msg3 += "\t" + " 1 menit  = " + data.hashrate.total[0] + "\n";
+        msg3 += "\t" + "10 menit  = " + data.hashrate.total[1] + "\n";
+        msg3 += "\t" + " 1 jam    = " + data.hashrate.total[2] + "\n";
+        msg3 += "\t" + "12 jam    = " + data.hashrate.total[3] + "\n";
+        msg3 += "\t" + "24 jam    = " + data.hashrate.total[4] + "\n";
+        msg3 += "\t" + "Rata-rata = " + data.hashrate.total[5] + "\n";
+        msg3 += "-------------------------------------------------------"+ "\n";
+        msg3 += "Miners " + "\n";
+        msg3 += "\t" + "Now  = " + data.miners.now + "\n";
+        msg3 += "\t" + "Now  = " + data.miners.max + "\n";
+        msg3 += "-------------------------------------------------------"+ "\n";
+        msg3 += "Status = " + data.results.accepted +" / " + data.results.rejected +" / " + data.results.invalid +" / " + data.results.expired +" " + "\n";
+        totalhs += data.hashrate.total[5];
+        totalminer += data.miners.now
+        
+      
+        result3.innerText = msg3; //display the result in an HTML element
+    }, function(status) { //error detection....
+      alert('Something went wrong.');
+    });
+    
+    msgTotal =  "========================================================"+ "\n";
+    msgTotal += "Miner : "+totalminer+ " | Hashrate : "+totalhs+" KHs " +"\n";
+    msgTotal += "========================================================"+ "\n";                                                                         
+    total.innerText = msgTotal;
     
   </script>
 </body>
