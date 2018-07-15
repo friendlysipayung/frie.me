@@ -63,8 +63,8 @@
         msg += "\t" + "Now  = " + data.miners.max + "\n";
         msg += "-------------------------------------------------------"+ "\n";
         msg += "Status = " + data.results.accepted +" / " + data.results.rejected +" / " + data.results.invalid +" / " + data.results.expired +" " + "\n";
-        totalhs += data.hashrate.total[5];
-        totalminer += data.miners.now
+        totalhs += parseFloat(data.hashrate.total[5]);
+        totalminer += parseInt(data.miners.now);
          
         result.innerText = msg; //display the result in an HTML element
     }, function(status) { //error detection....
@@ -89,8 +89,8 @@
         msg2 += "\t" + "Now  = " + data.miners.max + "\n";
         msg2 += "-------------------------------------------------------"+ "\n";
         msg2 += "Status = " + data.results.accepted +" / " + data.results.rejected +" / " + data.results.invalid +" / " + data.results.expired +" " + "\n";
-        totalhs += data.hashrate.total[5];
-        totalminer += data.miners.now
+        totalhs += parseFloat(data.hashrate.total[5]);
+        totalminer += parseInt(data.miners.now);
         
         
         result2.innerText = msg2; //display the result in an HTML element
@@ -116,8 +116,8 @@
         msg3 += "\t" + "Now  = " + data.miners.max + "\n";
         msg3 += "-------------------------------------------------------"+ "\n";
         msg3 += "Status = " + data.results.accepted +" / " + data.results.rejected +" / " + data.results.invalid +" / " + data.results.expired +" " + "\n";
-        totalhs += data.hashrate.total[5];
-        totalminer += data.miners.now
+        totalhs += parseFloat(data.hashrate.total[5]);
+        totalminer += parseInt(data.miners.now);
         
       
         result3.innerText = msg3; //display the result in an HTML element
