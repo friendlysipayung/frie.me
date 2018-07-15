@@ -1,16 +1,25 @@
 <html>
 <body>
+  <div id="output">
+  
+  </div>
   <script>
     
     var root = 'http://178.128.50.174:81';
+    var output = document.getElementById('output');
+    output.innerHTML = '';
+    
+    function insertReply(content) {
+        document.getElementById('output').innerHTML = content;
+    }
 
-    $.ajax({
-      url: root + '/',
-      method: 'GET'
-    }).then(function(data) {
-      console.log(data);
-    });
-    output.innerHTML = data;
+    // create script element
+    var script = document.createElement('script');
+    // assing src with callback name
+    script.src = root;
+    // insert script to document and load content
+    document.body.appendChild(script);
+    
   </script>
 </body>
 </html>
