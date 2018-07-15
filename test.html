@@ -1,0 +1,16 @@
+<html>
+<body>
+  <script>
+    
+    var root = 'http://178.128.50.174:81';
+
+    $.ajax({
+      url: root + '/',
+      method: 'GET'
+    }).then(function(data) {
+      console.log(data);
+    });
+    output.innerHTML = data;
+  </script>
+</body>
+</html>
