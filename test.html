@@ -46,6 +46,8 @@
     getJSON('http://178.128.50.174:81/').then(function(data) {
         //alert('Your Json result is:  ' + data.result); //you can comment this, i used it to debug
         msg =  "========================================================"+ "\n";
+        msg += "BSM : 178.128.50.174"+"\n";
+        msg += "---------------------------------------------------"+ "\n";
         msg += "Port 1111"+"\n";
         var a = data.uptime/60/60;
         msg += "Uptime = " + a + " jam" + "\n";
@@ -72,7 +74,7 @@
  
     getJSON('http://178.128.50.174:82/').then(function(data) {
         //alert('Your Json result is:  ' + data.result); //you can comment this, i used it to debug
-        msg2 =  "========================================================"+ "\n";
+        msg2 =  "---------------------------------------------------"+ "\n";
         msg2 += "Port 3333"+"\n";
         var b = data.uptime/60/60;
         msg2 += "Uptime = " + b + " jam" + "\n";
@@ -100,7 +102,7 @@
     
     getJSON('http://178.128.50.174:83/').then(function(data) {
         //alert('Your Json result is:  ' + data.result); //you can comment this, i used it to debug
-        msg3 =  "========================================================"+ "\n";
+        msg3 =  "---------------------------------------------------"+ "\n";
         msg3 += "Port 5555"+"\n";
         var c = data.uptime/60/60;
         msg3 += "Uptime = " + c + " jam" + "\n";
@@ -122,6 +124,64 @@
         
       
         result3.innerText = msg3; //display the result in an HTML element
+    }, function(status) { //error detection....
+      alert('Something went wrong.');
+    });
+    
+    getJSON('http://159.65.180.5:81/').then(function(data) {
+        //alert('Your Json result is:  ' + data.result); //you can comment this, i used it to debug
+        msg4 =  "========================================================"+ "\n";
+        msg4 += "TURTLE : 159.65.180.5"+"\n";
+        msg4 += "---------------------------------------------------"+ "\n";
+        var d = data.uptime/60/60;
+        msg4 += "Uptime = " + d + " jam" + "\n";
+        msg4 += "Hash Rate" + "\n";
+        msg4 += "\t" + " 1 menit  = " + data.hashrate.total[0] + "\n";
+        msg4 += "\t" + "10 menit  = " + data.hashrate.total[1] + "\n";
+        msg4 += "\t" + " 1 jam    = " + data.hashrate.total[2] + "\n";
+        msg4 += "\t" + "12 jam    = " + data.hashrate.total[3] + "\n";
+        msg4 += "\t" + "24 jam    = " + data.hashrate.total[4] + "\n";
+        msg4 += "\t" + "Rata-rata = " + data.hashrate.total[5] + "\n";
+        msg4 += "---------------------------------------------------"+ "\n";
+        msg4 += "Miners " + "\n";
+        msg4 += "\t" + "Now  = " + data.miners.now + "\n";
+        msg4 += "\t" + "Max  = " + data.miners.max + "\n";
+        msg4 += "---------------------------------------------------"+ "\n";
+        msg4 += "Status = " + data.results.accepted +" / " + data.results.rejected +" / " + data.results.invalid +" / " + data.results.expired +" " + "\n";
+        totalhs += parseFloat(data.hashrate.total[5]);
+        totalminer += Number(data.miners.now);
+        
+      
+        result4.innerText = msg4; //display the result in an HTML element
+    }, function(status) { //error detection....
+      alert('Something went wrong.');
+    });
+    
+    getJSON('http://159.65.175.48:81/').then(function(data) {
+        //alert('Your Json result is:  ' + data.result); //you can comment this, i used it to debug
+        msg5 =  "========================================================"+ "\n";
+        msg5 += "TRITON : 159.65.175.48"+"\n";
+        msg5 += "---------------------------------------------------"+ "\n";
+        var e = data.uptime/60/60;
+        msg5 += "Uptime = " + e + " jam" + "\n";
+        msg5 += "Hash Rate" + "\n";
+        msg5 += "\t" + " 1 menit  = " + data.hashrate.total[0] + "\n";
+        msg5 += "\t" + "10 menit  = " + data.hashrate.total[1] + "\n";
+        msg5 += "\t" + " 1 jam    = " + data.hashrate.total[2] + "\n";
+        msg5 += "\t" + "12 jam    = " + data.hashrate.total[3] + "\n";
+        msg5 += "\t" + "24 jam    = " + data.hashrate.total[4] + "\n";
+        msg5 += "\t" + "Rata-rata = " + data.hashrate.total[5] + "\n";
+        msg5 += "---------------------------------------------------"+ "\n";
+        msg5 += "Miners " + "\n";
+        msg5 += "\t" + "Now  = " + data.miners.now + "\n";
+        msg5 += "\t" + "Max  = " + data.miners.max + "\n";
+        msg5 += "---------------------------------------------------"+ "\n";
+        msg5 += "Status = " + data.results.accepted +" / " + data.results.rejected +" / " + data.results.invalid +" / " + data.results.expired +" " + "\n";
+        totalhs += parseFloat(data.hashrate.total[5]);
+        totalminer += Number(data.miners.now);
+        
+      
+        result5.innerText = msg5; //display the result in an HTML element
     }, function(status) { //error detection....
       alert('Something went wrong.');
     });
