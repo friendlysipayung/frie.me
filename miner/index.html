@@ -367,14 +367,14 @@
                                                         ajaxget(localStorage.proxy_url, mainInfoCallback);
                                                         miRefresh = setInterval(function () {
                                                             ajaxget(localStorage.proxy_url, mainInfoCallback);
-                                                        }, 60000);
+                                                        }, 10000);
                                                     }
 
                                                     function getProxyWorkersInfo() {
                                                         ajaxget(localStorage.proxy_url + '/1/workers', workersInfoCallback);
                                                         wiRefresh = setInterval(function () {
                                                             ajaxget(localStorage.proxy_url + '/1/workers', workersInfoCallback);
-                                                        }, 60000);
+                                                        }, 10000);
                                                     }
 
                                                     function resetProxyUrl() {
@@ -397,7 +397,7 @@
                                                         checkProxyUrl();
                                                         setInterval(checkProxyUrl, 1000);
                                                         loadEx();
-                                                        setInterval(loadEx, 120000);
+                                                        setInterval(loadEx, 10000);
                                                         datatable = $('#workerstable').DataTable({
                                                             data: workers,
                                                             columns: [
