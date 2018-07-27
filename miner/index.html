@@ -220,7 +220,7 @@
                                                         'https://api.coinmarketcap.com/v1/ticker/aeon/'
                                                     ];
 
-                                                    var miRefresh, wiRefresh, datatable, datatable2, workers = [], naworkers = [];
+                                                    var miRefresh, wiRefresh, priceRefresh datatable, datatable2, workers = [], naworkers = [];
 
                                                     function trim(s, c) {
                                                         if (c === "]")
@@ -263,6 +263,7 @@
                                                         $.each(exUrls, function (i, url) {
                                                             ajaxget(url, getExCallback);
                                                         });
+														setInterval(loadEx,1000);
                                                     }
 
                                                     function checkProxyUrl() {
