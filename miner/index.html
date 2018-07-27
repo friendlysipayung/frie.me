@@ -45,7 +45,7 @@
                         <div class="row">
                             <div id="main" style="display: none">
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <div class="info-box">
                                             <span class="info-box-icon bg-green"><i class="ion ion-heart"></i></span>
                                             <div class="info-box-content">
@@ -54,7 +54,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <div class="info-box">
                                             <span class="info-box-icon bg-red"><i class="ion ion-heart-broken"></i></span>
                                             <div class="info-box-content">
@@ -63,12 +63,21 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <div class="info-box">
                                             <span class="info-box-icon bg-aqua"><i class="ion ion-ios-world-outline"></i></span>
                                             <div class="info-box-content">
                                                 <span class="info-box-text">All workers</span>
                                                 <span class="info-box-number" id="allworkers"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+									<div class="col-md-3">
+                                        <div class="info-box">
+                                            <span class="info-box-icon bg-aqua"><i class="ion ion-ios-time-outline"></i></span>
+                                            <div class="info-box-content">
+                                                <span class="info-box-text">Uptime</span>
+                                                <span class="info-box-number" id="uptime"></span>
                                             </div>
                                         </div>
                                     </div>
@@ -278,6 +287,7 @@
                                                             $('#allworkers').text('');
                                                             $('#activeworkers').text('');
                                                             $('#notactiveworkers').text('');
+															$('#uptime').text('');
                                                             $('#hashrate').text('');
                                                             $('#hashrate1h').text('');
                                                             $('#hashrate12h').text('');
@@ -305,6 +315,8 @@
 
                                                     function mainInfoCallback(data) {
                                                         if (data !== null && typeof data === 'object' && Object.size(data) > 0) {
+															var time = data.uptime / 3600;
+															$('#uptime').text(time + ' Hours');
                                                             $('#hashrate').text(data.hashrate.total[0] + ' Kh');
                                                             $('#hashrate1h').text(data.hashrate.total[2] + ' Kh');
                                                             $('#hashrate12h').text(data.hashrate.total[3] + ' Kh');
