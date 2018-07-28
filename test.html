@@ -52,7 +52,7 @@
         msg =  "========================================================"+ "\n";
         msg += "BSM : 178.128.50.174"+"\n";
         msg += "---------------------------------------------------"+ "\n";
-        msg += "Port 1111"+"\n";
+        msg += "Port 81"+"\n";
         var a = data.uptime/60/60;
         msg += "Uptime = " + a + " jam" + "\n";
         msg += "Hash Rate" + "\n";
@@ -78,8 +78,10 @@
  
     getJSON('http://178.128.50.174:82/').then(function(data) {
         //alert('Your Json result is:  ' + data.result); //you can comment this, i used it to debug
-        msg2 =  "---------------------------------------------------"+ "\n";
-        msg2 += "Port 3333"+"\n";
+        msg2 =  "========================================================"+ "\n";
+        msg2 += "TURTLE : 178.128.50.174"+"\n";
+        msg2 += "---------------------------------------------------"+ "\n";
+        msg2 += "Port 82"+"\n";
         var b = data.uptime/60/60;
         msg2 += "Uptime = " + b + " jam" + "\n";
         msg2 += "Hash Rate" + "\n";
@@ -106,8 +108,10 @@
     
     getJSON('http://178.128.50.174:83/').then(function(data) {
         //alert('Your Json result is:  ' + data.result); //you can comment this, i used it to debug
-        msg3 =  "---------------------------------------------------"+ "\n";
-        msg3 += "Port 5555"+"\n";
+        msg3 =  "========================================================"+ "\n";
+        msg3 += "ALTCOIN : 178.128.50.174"+"\n";
+        msg3 +=  "---------------------------------------------------"+ "\n";
+        msg3 += "Port 83"+"\n";
         var c = data.uptime/60/60;
         msg3 += "Uptime = " + c + " jam" + "\n";
         msg3 += "Hash Rate" + "\n";
