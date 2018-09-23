@@ -28,6 +28,7 @@ function geturl(){
     }else if (url_ok == false){
         document.getElementById("uri").innerHTML = "Use only http:// or https:// or ftp://";
         refresh();
+    }
 }
 
 function getrandom() {
