@@ -43,9 +43,9 @@ function shorturl(){
     send_request(longurl);
 }
 
-var hashh = window.location.hash.substr(1)
+var hashh = window.location.pathname.substr(3)
 
-if (window.location.hash != "") {
+if (hashh != "") {
     $.getJSON(endpoint + "/" + hashh, function (data) {
         data = data["result"];
 
