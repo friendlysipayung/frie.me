@@ -1,5 +1,12 @@
 var endpoint = "https://www.jsonstore.io/7cfceed0821a48435866425e59fa3b4ef5ce35283f852e665ff86854ba2a7991";
 
+function refresh() {
+
+    setTimeout(function () {
+        window.location.reload()
+    }, 100);
+}
+
 function validate(url) {
     var pattern = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
     if (pattern.test(url)) {
@@ -16,9 +23,11 @@ function geturl(){
     if(!protocol_ok && url_ok){
         newurl = "http://"+url;
         return newurl;
-    }else if (url_ok){
+    }else if (url_ok == true){
         return url;
-    }
+    }else if (url_ok == false){
+        document.getElementById("uri").innerHTML = "Use only http:// or https:// or ftp://";
+        refresh();
 }
 
 function getrandom() {
@@ -63,11 +72,7 @@ function send_request(url) {
 function shorturl(){
     var longurl = geturl();
     var h = genhash();
-    if (h == false){
-        document.getElementById("uri").innerHTML = "Use only http:// or https:// or ftp://";
-        window.location.reload(true);
-    }
-    else {
+    if (h != false){
         send_request(longurl);
         document.getElementById("uri").innerHTML = "Short Link : http://frie.me/in/#"+h;
     }
