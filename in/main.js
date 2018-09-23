@@ -53,7 +53,7 @@ function shorturl(){
     var longurl = geturl();
     var h = genhash();
     send_request(longurl);
-    document.getElementById("uri").innerHTML = "Short Link : http://frie.me/in/"+h;
+    document.getElementById("uri").innerHTML = "Short Link : http://frie.me/in/#"+h;
 }
 
 var hashh = window.location.hash.substr(1)
