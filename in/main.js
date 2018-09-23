@@ -1,14 +1,25 @@
 var endpoint = "https://www.jsonstore.io/7cfceed0821a48435866425e59fa3b4ef5ce35283f852e665ff86854ba2a7991";
 
+function validate(url) {
+    var pattern = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+    if (pattern.test(url)) {
+        alert("Url is valid");
+        return true;
+    } 
+    alert("Url is not valid!");
+    return false;
+ }
+
 function geturl(){
     var url = document.getElementById("urlinput").value;
     var protocol_ok = url.startsWith("http://") || url.startsWith("https://") || url.startsWith("ftp://");
-    if(!protocol_ok){
+    var url_ok = validate(url);
+    if(!protocol_ok && url_ok){
         newurl = "http://"+url;
         return newurl;
-        }else{
-            return url;
-        }
+    }else if (url_ok){
+        return url;
+    }
 }
 
 function getrandom() {
