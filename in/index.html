@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>URL SHORTENER</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.0/examples/floating-labels/floating-labels.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <form class="form-signin">
+    	<div class="text-center mb-4">
+        	<b><h1 class="h3 mb-3 font-weight-normal">URL SHORTENER</h1></b>
+      	</div>
+
+	<div class="form-label-group">
+		<input type="link" id="urlinput" class="form-control" placeholder="Long URL" required autofocus>
+		<label for="urlinput">Long URL</label>
+	</div>
+
+    	<button class="btn btn-lg btn-primary btn-block" onclick="shorturl()">OK!</button>
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="main.js"></script>
+  	<div class="alert alert-danger" id="alert" style="display:none;">
+
+  	</div>
+  	<div class="alert alert-success" id="uri" style="display:none;">
+
+  	</div>
+      <p class="mt-5 mb-3 text-muted text-center">&copy; 2018</p>
+    </form>
+  </body>
+</html>
