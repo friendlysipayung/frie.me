@@ -32,7 +32,9 @@ function getrandom() {
 
 function genhash(){
     if (window.location.hash == ""){
-        window.location.hash = getrandom();
+        var rndm = getrandom();
+        window.location.hash = rndm;
+        return rndm;
     }
 }
 
@@ -49,8 +51,9 @@ function send_request(url) {
 
 function shorturl(){
     var longurl = geturl();
-    genhash();
+    var h = genhash();
     send_request(longurl);
+    document.getElementById("uri").innerHTML = "Short Link : http://frie.me/in/"+h;
 }
 
 var hashh = window.location.hash.substr(1)
