@@ -17,7 +17,17 @@ function getrandom() {
 
     for (var i = 0; i < 5; i++)
         text += possible.charAt(Math.floor(Math.random() * possible.length));
+    
+    $.getJSON(endpoint + "/" + text, function (data) {
+        data = data["result"];
+            
+        if (data != null) {
+            text = getrandom()
+        }
+
+    });
     return text;
+    
 }
 
 function genhash(){
@@ -43,9 +53,9 @@ function shorturl(){
     send_request(longurl);
 }
 
-var hashh = window.location.pathname.substr(3)
+var hashh = window.location.hash.substr(1)
 
-if (hashh != "") {
+if (window.location.hash != "") {
     $.getJSON(endpoint + "/" + hashh, function (data) {
         data = data["result"];
 
