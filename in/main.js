@@ -6,6 +6,14 @@ function refresh(){
     }, 1000);
 }
 
+function showDiv(a){
+    b = "#"+a;
+    $(b).fadeIn(1000);
+    setTimeout(function() { 
+       $(b).fadeOut(1000); 
+    }, 5000);   
+}
+
 function showMsq(id,msg){
     document.getElementById(id).innerHTML = msg;
 }
@@ -29,6 +37,7 @@ function geturl(){
     }else if (url_ok == true){
         return url;
     }else if (url_ok == false){
+        showDiv("alert");
         showMsq("alert","Use only http:// or https:// or ftp://");
         refresh();
         return false;
