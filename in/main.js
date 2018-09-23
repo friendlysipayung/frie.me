@@ -3,15 +3,12 @@ var endpoint = "https://www.jsonstore.io/7cfceed0821a48435866425e59fa3b4ef5ce352
 function refresh(){
     setTimeout(function () {
         window.location.reload()
-    }, 1000);
+    }, 4000);
 }
 
 function showDiv(a){
     b = "#"+a;
-    $(b).fadeIn(1000);
-    setTimeout(function() { 
-       $(b).fadeOut(1000); 
-    }, 5000);   
+    $(b).fadeIn(1000); 
 }
 
 function showMsq(id,msg){
@@ -86,7 +83,9 @@ function shorturl(){
         var h = genhash();
         if (h != false){
             send_request(longurl,h);
-            document.getElementById("uri").innerHTML = "Short Link : http://frie.me/in/#"+h;
+            showDiv("uri");
+            showMsq("uri","Short Link : http://frie.me/in/#"+h);
+            //document.getElementById("uri").innerHTML = "Short Link : http://frie.me/in/#"+h;
         }
     }
 }
