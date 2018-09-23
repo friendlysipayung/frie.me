@@ -3,7 +3,7 @@ var endpoint = "https://www.jsonstore.io/7cfceed0821a48435866425e59fa3b4ef5ce352
 function refresh(){
     setTimeout(function () {
         window.location.reload()
-    }, 100);
+    }, 1000);
 }
 
 function showMsq(id,msg){
