@@ -16,17 +16,17 @@
   </head>
 
   <body>
-    <form class="form-signin">
+    <form>
     	<div class="text-center mb-4">
         	<b><h1 class="h3 mb-3 font-weight-normal">URL SHORTENER</h1></b>
       	</div>
 
 	<div class="form-label-group">
-		<input type="link" id="urlinput" class="form-control" placeholder="Long URL" required autofocus>
+		<input type="text" id="urlinput" class="form-control" placeholder="Long URL" required autofocus>
 		<label for="urlinput">Long URL</label>
 	</div>
 
-    	<button class="btn btn-lg btn-primary" onclick="shorturl()">OK!</button>
+    	<button class="btn btn-lg btn-primary" type="button" onclick="shorturl()">OK!</button>
     	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="main.js"></script>
