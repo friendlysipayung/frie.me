@@ -9,6 +9,7 @@ function refresh(){
 function showDiv(a){
     var b = "#"+a;
     $(b).fadeIn(1000); 
+    $('#none').fadeOut(1000); 
 }
 
 function showMsq(id,msg){
