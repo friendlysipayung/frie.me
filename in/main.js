@@ -6,7 +6,7 @@ function refresh(){
     }, 100);
 }
 
-fuction showMsq(id,msg){
+function showMsq(id,msg){
     document.getElementById(id).innerHTML = msg;
 }
 
