@@ -86,7 +86,7 @@ function shorturl(){
             send_request(longurl,h);
             showDiv("uri");
             var link = "http://frie.me/in/" +h;
-            var t = "Short Link : <a href='"+link+"'>+link+"</a>";
+            var t = "Short Link : <a href='" + link + "'>" +link+"</a>";
             showMsq("uri",t);
             //document.getElementById("uri").innerHTML = "Short Link : http://frie.me/in/#"+h;
         }
