@@ -19,24 +19,31 @@
 	<div class="row">
 		<div class="col-lg-1"></div>
 		<div class="col-lg-10">
-			<div class="text-center">
-				<b><h1 class="h3 mb-3 font-weight-normal">URL SHORTENER</h1></b>
-			</div>
+			<form class="form-signin">
+				<div class="text-center mb-4">
+					<b><h1 class="h3 mb-3 font-weight-normal">URL SHORTENER</h1></b>
+				</div>
 
-			<input type="text" id="urlinput" class="form-control" placeholder="Long URL" required autofocus>
-			<label for="urlinput">Long URL</label>
-			<button class="btn btn-lg btn-primary" type="button" onclick="shorturl()">OK!</button>
+				<div class="form-label-group mb-4">
+					<input type="text" id="urlinput" class="form-control" placeholder="Long URL" required autofocus>
+					<label for="urlinput">Long URL</label>
+				</div>
+				
+				<button class="btn btn-lg btn-primary btn-block" type="button" onclick="shorturl()">OK!</button>
 
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-			<script src="main.js"></script>
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+				<script src="main.js"></script>
 
-			<div class="alert alert-danger" id="alert" style="display:none;">
-				<p id="alert"> </p>
-			</div>
-			<div class="alert alert-success" id="uri" style="display:none;">
-				<p id="uri"> </p>
-			</div>
-
+				<div class="form-label-group">
+					<div class="alert alert-danger" id="alert" style="display:none;">
+						<p id="alert"> </p>
+						<strong>Error!</strong>!
+					</div>
+					<div class="alert alert-success" id="uri" style="display:none;">
+						<p id="uri"> </p>
+					</div>
+				</div>
+			</form>
 		</div>
 	</div>
 </body>
