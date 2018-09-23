@@ -7,7 +7,7 @@ function refresh(){
 }
 
 function showDiv(a){
-    b = "#"+a;
+    var b = "#"+a;
     $(b).fadeIn(1000); 
 }
 
@@ -84,7 +84,8 @@ function shorturl(){
         if (h != false){
             send_request(longurl,h);
             showDiv("uri");
-            showMsq("uri","Short Link : http://frie.me/in/#"+h);
+            var t = "Short Link : http://frie.me/in/#"+h
+            showMsq("uri",t);
             //document.getElementById("uri").innerHTML = "Short Link : http://frie.me/in/#"+h;
         }
     }
