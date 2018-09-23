@@ -3,7 +3,6 @@ var endpoint = "https://www.jsonstore.io/7cfceed0821a48435866425e59fa3b4ef5ce352
 function validate(url) {
     var pattern = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
     if (pattern.test(url)) {
-        alert("Url is valid");
         return true;
     } 
     alert("Url is not valid!");
@@ -47,6 +46,7 @@ function genhash(){
         window.location.hash = rndm;
         return rndm;
     }
+    return false;
 }
 
 function send_request(url) {
@@ -63,8 +63,14 @@ function send_request(url) {
 function shorturl(){
     var longurl = geturl();
     var h = genhash();
-    send_request(longurl);
-    document.getElementById("uri").innerHTML = "Short Link : http://frie.me/in/#"+h;
+    if (h != false){
+        send_request(longurl);
+        document.getElementById("uri").innerHTML = "Short Link : http://frie.me/in/#"+h;
+    }
+    else {
+        document.getElementById("uri").innerHTML = "Use only http:// or https:// or ftp://";
+        window.location.href = this.url;
+    }
 }
 
 var hashh = window.location.hash.substr(1)
