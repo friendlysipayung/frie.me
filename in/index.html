@@ -25,9 +25,16 @@
 		<input type="text" id="urlinput" class="form-control" placeholder="Long URL" required autofocus>
 		<label for="urlinput">Long URL</label>
 	</div>
-
     	<button class="btn btn-lg btn-primary" type="button" onclick="shorturl()">OK!</button>
     	
+	<div class="input-group mb-3">
+	  <input type="text" class="form-control" placeholder="Long URL" id="urlinput" required autofocus>
+	  <label for="urlinput">Long URL</label>
+	  <div class="input-group-append">
+	    <button class="btn btn-outline-secondary" type="button" onclick="shorturl()">OK!</button>
+	  </div>
+	</div>
+	    
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="main.js"></script>
 	    
@@ -42,8 +49,6 @@
 	</div>
       
     </form>
-    <div class="text-center mb-4">
-       <p class="mt-5 mb-3 text-muted text-center">&copy; 2018</p>
-    </div>
+
   </body>
 </html>
