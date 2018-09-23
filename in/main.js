@@ -10,6 +10,9 @@ function showDiv(a){
     var b = "#"+a;
     $('#none').fadeOut(100); 
     $(b).fadeIn(1000); 
+    if (a == "alert"){
+        $(b).fadeOut(10000); 
+    }
 }
 
 function showMsq(id,msg){
@@ -37,7 +40,7 @@ function geturl(){
     }else if (url_ok == false){
         showDiv("alert");
         showMsq("alert","Use only http:// or https:// or ftp://");
-        refresh();
+        //refresh();
         return false;
     }
 }
