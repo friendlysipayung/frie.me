@@ -1,10 +1,13 @@
 var endpoint = "https://www.jsonstore.io/7cfceed0821a48435866425e59fa3b4ef5ce35283f852e665ff86854ba2a7991";
 
-function refresh() {
-
+function refresh(){
     setTimeout(function () {
         window.location.reload()
     }, 100);
+}
+
+fuction showMsq(id,msg){
+    document.getElementById(id).innerHTML = msg;
 }
 
 function validate(url) {
@@ -26,8 +29,9 @@ function geturl(){
     }else if (url_ok == true){
         return url;
     }else if (url_ok == false){
-        document.getElementById("uri").innerHTML = "Use only http:// or https:// or ftp://";
+        showMsq("alert","Use only http:// or https:// or ftp://");
         refresh();
+        return false;
     }
 }
 
@@ -39,12 +43,10 @@ function getrandom() {
         text += possible.charAt(Math.floor(Math.random() * possible.length));
     
     $.getJSON(endpoint + "/" + text, function (data) {
-        data = data["result"];
-            
+        data = data["result"];          
         if (data != null) {
             text = getrandom()
         }
-
     });
     return text;
     
@@ -53,18 +55,17 @@ function getrandom() {
 function genhash(){
     if (window.location.hash == ""){
         var rndm = getrandom();
-        window.location.hash = rndm;
+        //window.location.hash = rndm;
         return rndm;
     }
     return false;
 }
 
-function send_request(url) {
-    this.url = url;
+function send_request(url,hashed) {
     $.ajax({
-        'url': endpoint + "/" + window.location.hash.substr(1),
+        'url': endpoint + "/" + hashed,
         'type': 'POST',
-        'data': JSON.stringify(this.url),
+        'data': JSON.stringify(url),
         'dataType': 'json',
         'contentType': 'application/json; charset=utf-8'
 })
@@ -72,10 +73,12 @@ function send_request(url) {
 
 function shorturl(){
     var longurl = geturl();
-    var h = genhash();
-    if (h != false){
-        send_request(longurl);
-        document.getElementById("uri").innerHTML = "Short Link : http://frie.me/in/#"+h;
+    if (longurl != false){
+        var h = genhash();
+        if (h != false){
+            send_request(longurl,h);
+            document.getElementById("uri").innerHTML = "Short Link : http://frie.me/in/#"+h;
+        }
     }
 }
 
