@@ -63,13 +63,13 @@ function send_request(url) {
 function shorturl(){
     var longurl = geturl();
     var h = genhash();
-    if (h != false){
-        send_request(longurl);
-        document.getElementById("uri").innerHTML = "Short Link : http://frie.me/in/#"+h;
+    if (h == false){
+        document.getElementById("uri").innerHTML = "Use only http:// or https:// or ftp://";
+        window.location.reload(true);
     }
     else {
-        document.getElementById("uri").innerHTML = "Use only http:// or https:// or ftp://";
-        window.location.href = this.url;
+        send_request(longurl);
+        document.getElementById("uri").innerHTML = "Short Link : http://frie.me/in/#"+h;
     }
 }
 
