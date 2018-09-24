@@ -98,8 +98,7 @@ function shorturl(){
 
 function showAdvance(){
        showDiv("advanced");
-       showMsq("advanced","http://frie.me/in/#<input type='text' id='urladvance' class='form-control' placeholder='blabla' required autofocus>
-					<label for='urladvance'>link</label>");
+       showMsq("advanced","http://frie.me/in/#<input type='text' id='urladvance' class='form-control' placeholder='blabla' required autofocus><label for='urladvance'>link</label>");
 }
 var hashh = window.location.hash.substr(1)
 
