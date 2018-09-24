@@ -96,6 +96,10 @@ function shorturl(){
     }
 }
 
+function showAdvance(){
+       showDiv("advanced");
+       showMsq("advanced","this is advance feature");
+}
 var hashh = window.location.hash.substr(1)
 
 if (window.location.hash != "") {
