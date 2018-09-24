@@ -14,20 +14,6 @@
 	<!-- Custom styles for this template -->
 	<link href="https://getbootstrap.com/docs/4.0/examples/floating-labels/floating-labels.css" rel="stylesheet">
 	
-	<script>
-		$(document).ready(function(){
-		    $(".active").click(function(){
-			$(".active_content").show();
-		    }); 
-		});
-	</script>
-
-	<style>
-		.active_content{
-		display:none;
-		}
-	</style>
-	
 	<style type="text/css">
             
             body {
@@ -54,19 +40,10 @@
 			<input type="text" id="urlinput" class="form-control" placeholder="Long URL" required autofocus>
 			<label for="urlinput">Long URL</label>
 		</div>
-		<button class="btn btn-xs btn-primary mb-3" type="button" href="#apple" aria-controls="tracking"role="tab" data-toggle="tab">advanced</button>
-		<div class="tab-content">
-			<div role="tabpanel" class="tab-pane active" id="orange">
-				<div class="container">
-					<div class="row active_content">Some content</div>
-				  	</div>
-				 </div>
-
-			      	<div role="tabpanel" class="tab-pane" id="apple">
-			      		<div class="container">
-			      			<div class="row">Some Content2</div>
-			      		</div>
-			      	</div>
+		<button type="button" class="btn btn-link" id="advance">advanced</button>
+		<div class="form-label-group mb-3">
+			<div class="alert alert-danger" id="advanced" style="display:none;">
+				<p id="advanced"> </p>
 			</div>
 		</div>
 		
