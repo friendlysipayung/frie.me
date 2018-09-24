@@ -97,8 +97,9 @@ function shorturl(){
 }
 
 function showAdvance(){
+       var t = "<div class='input-group mb-1'><div class='input-group-prepend'><span class='input-group-text' id='basic-addon3'>http://frie.me/in/#</span></div><input type='text' class='form-control' id='advurl' aria-describedby='basic-addon3'></div>";
        showDiv("advanced");
-       showMsq("advanced","http://frie.me/in/#<input type='text' id='urladvance' class='form-control' placeholder='blabla' required autofocus><label for='urladvance'>link</label>");
+       showMsq("advanced",t);
 }
 var hashh = window.location.hash.substr(1)
 
