@@ -41,9 +41,12 @@
 			<label for="urlinput">Long URL</label>
 		</div>
 		<button type="button" class="btn btn-link" id="advance" onclick="showAdvance()">advanced</button>
-		<div class="form-label-group mb-3">
+		<div class="form-label-group mb-1">
 			<div class="alert alert-danger" id="advanced" style="display:none;">
-				<p id="advanced"> </p>
+				<p id="advanced"> 
+					http://frie.me/in/#<input type="text" id="urladvance" class="form-control" placeholder="blabla" required autofocus>
+					<label for="urlinput">link</label>
+				</p>
 			</div>
 		</div>
 		
@@ -58,7 +61,6 @@
 			</div>
 			<div class="alert alert-danger" id="alert" style="display:none;">
 				<p id="alert"> </p>
-				<strong>Error!</strong>!
 			</div>
 			<div class="alert alert-success" id="uri" style="display:none;">
 				<p id="uri"> </p>
