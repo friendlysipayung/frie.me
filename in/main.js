@@ -83,7 +83,7 @@ function send_request(url,hashed) {
 
 function shorturl(){
     var longurl = geturl();
-    if (typeof document.getElementById("advurl").value ==  === 'undefined'){
+    if (typeof document.getElementById("advurl").value === 'undefined'){
         var advurl = "";
     }
     else {
