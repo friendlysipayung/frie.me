@@ -83,8 +83,12 @@ function send_request(url,hashed) {
 
 function shorturl(){
     var longurl = geturl();
-    var advurl = "";
-    advurl = advurl+document.getElementById("advurl").value;
+    if (typeof document.getElementById("advurl").value ==  === 'undefined'){
+        var advurl = "";
+    }
+    else {
+        var advurl = document.getElementById("advurl").value;
+    }
     if (advurl != ""){
         if (longurl != false){
             $.getJSON(endpoint + "/" + advurl, function (data) {
