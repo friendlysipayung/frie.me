@@ -86,7 +86,10 @@ function shorturl(){
 //     if (typeof document.getElementById("advurl").value === 'undefined'){
     var advurl = "";
     if (!document.getElementById("advurl")){
-        advurl = advurl+document.getElementById("advurl").value;
+        advurl = "";
+    }
+    else {
+        advurl = document.getElementById("advurl").value;
     }
     if (advurl==""){
         if (longurl != false){
