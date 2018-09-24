@@ -84,7 +84,7 @@ function send_request(url,hashed) {
 function shorturl(){
     var longurl = geturl();
 //     if (typeof document.getElementById("advurl").value === 'undefined'){
-    var advurl = document.getElementById("advurl").value;
+    var advurl = ""+document.getElementById("advurl").value;
     if (!advurl){
         if (longurl != false){
             var h = genhash();
