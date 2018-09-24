@@ -83,15 +83,36 @@ function send_request(url,hashed) {
 
 function shorturl(){
     var longurl = geturl();
-    if (longurl != false){
-        var h = genhash();
-        if (h != false){
-            send_request(longurl,h);
-            showDiv("uri");
-            var link = "http://frie.me/in/#" +h;
-            var t = "Short Link : <a href='" + link + "'>" +link+"</a>";
-            showMsq("uri",t);
-            //document.getElementById("uri").innerHTML = "Short Link : http://frie.me/in/#"+h;
+    var advurl = document.getElementById("advurl").value;
+    if (advurl != ""){
+        if (longurl != false){
+            $.getJSON(endpoint + "/" + advurl, function (data) {
+                data = data["result"];
+
+                if (data != null) {
+                    alert("URL used");
+                }else{
+                    send_request(longurl,advurl);
+                    showDiv("uri");
+                    var link = "http://frie.me/in/#" +advurl;
+                    var t = "Short Link : <a href='" + link + "'>" +link+"</a>";
+                    showMsq("uri",t);   
+                }
+
+            });
+        }
+    }
+    else {
+        if (longurl != false){
+            var h = genhash();
+            if (h != false){
+                send_request(longurl,h);
+                showDiv("uri");
+                var link = "http://frie.me/in/#" +h;
+                var t = "Short Link : <a href='" + link + "'>" +link+"</a>";
+                showMsq("uri",t);
+                //document.getElementById("uri").innerHTML = "Short Link : http://frie.me/in/#"+h;
+            }
         }
     }
 }
